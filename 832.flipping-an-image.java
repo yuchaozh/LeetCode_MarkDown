@@ -82,6 +82,40 @@ class Solution {
     }
 }
 
+class Solution {
+    public int[][] flipAndInvertImage(int[][] image) {
+        if (image == null || image.length == 0 || image[0].length == 0) {
+            return image;
+        }
+        int row = image.length;
+        int col = image[0].length;
+
+        // flip each row
+        for (int i = 0; i < row; i++) {
+            flip(image, i);
+        }
+
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                image[i][j] ^= 1;
+            }
+        }
+
+        return image;
+    }
+
+    private void flip(int[][] image, int row) {
+        int left = 0, right = image[row].length - 1;
+        while (left <= right) {
+            int temp = image[row][left];
+            image[row][left] = image[row][right];
+            image[row][right] = temp;
+            left++;
+            right--;
+        }
+    }
+}
+
 
 // Solution 2: more concise
 // in the concise version, we need to make sure we process the middle one.
