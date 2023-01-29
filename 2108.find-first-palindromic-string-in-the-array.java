@@ -59,7 +59,29 @@
 // @lc code=start
 class Solution {
     public String firstPalindrome(String[] words) {
-        
+        if (words == null) {
+            return "";
+        }
+
+        for (int i = 0; i < words.length; i++) {
+            if (isPalindromic(words[i])) {
+                return words[i];
+            }
+        } 
+
+        return "";
+    }
+
+    private boolean isPalindromic(String s) {
+        int left = 0, right = s.length() - 1;
+        char[] arr = s.toCharArray();
+
+        while (left < right) {
+            if (arr[left++] != arr[right--]) {
+                return false;
+            }
+        }
+        return true;
     }
 }
 // @lc code=end
