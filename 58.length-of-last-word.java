@@ -79,6 +79,22 @@ class Solution {
 
         return right - left;
     }
+
+    public int lengthOfLastWord(String s) {
+        if ( s == null || s.length() == 0) {
+            return 0;
+        }
+
+        int index = s.length() - 1, length = 0;
+        while (index >= 0) {
+            if (s.charAt(index--) != ' ') {
+                length++;
+            } else if (length > 0) {
+                return length;
+            }
+        }
+        return length;
+    }
 }
 // @lc code=end
 
