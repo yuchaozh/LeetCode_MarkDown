@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 /*
  * @lc app=leetcode id=217 lang=java
  *
@@ -68,6 +71,37 @@ public boolean containsDuplicate(int[] nums) {
         if (set.contains(x)) return true;
         set.add(x);
     }
+    return false;
+}
+
+// Set add(), https://www.geeksforgeeks.org/set-add-method-in-java-with-examples/
+// The function returns True if the element is not present in the set and is new, 
+// else it returns False if the element is already present in the set
+public boolean containsDuplicate(int[] nums) {
+    Set<Integer> set = new HashSet<>(); // Use HashSet to store unique elements
+    for (int x : nums) {
+      if (!set.add(x)) // If the set already contains the current element, return true
+        return true;
+    }
+    return false; // Return false if no duplicates found
+}
+
+// sorting
+// Time Complexity O(n * logN), because sorting array take that much time.
+// Space Complexity O(1) or O(n). depending on the sorting algorithm used.
+public boolean containsDuplicate(int[] nums) {
+    if (nums == null || nums.length < 2) {
+        return false;
+    }
+
+    Arrays.sort(nums);
+
+    for (int i = 0; i < nums.length - 1; i++) {
+        if (nums[i] == nums[i + 1]) {
+            return true;
+        }
+    }
+
     return false;
 }
 // @lc code=end
