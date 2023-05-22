@@ -59,8 +59,6 @@ class Solution {
                 swap(A, left, right);
                 left++;
                 right--;
-            } else {
-                break;
             }
         }
         return A;
@@ -99,6 +97,27 @@ class Solution {
         }
 
         return A;
+    }
+}
+
+class Solution {
+    public int[] sortArrayByParity(int[] nums) {
+        if (nums == null || nums.length < 2) {
+            return nums;
+        }
+
+        int left = 0;
+        int right = nums.length - 1;
+        int[] results = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] % 2 == 0) {
+                results[left++] = nums[i];
+            } else {
+                results[right--] = nums[i];
+            }
+        }
+
+        return results;
     }
 }
 
