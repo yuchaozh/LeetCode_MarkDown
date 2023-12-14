@@ -1,5 +1,5 @@
 class FindTheHighestAltitude {
-    public static int largestAltitude(int[] gain) {
+    public int largestAltitude(int[] gain) {
         int currentAltitude = 0; // To store the current altitude during iteration
         int maxAltitude = 0; // To store the maximum altitude encountered
 
@@ -32,15 +32,15 @@ class FindTheHighestAltitude {
     
 
     public static void main(String[] args) {
-        Solution FindTheHighestAltitude = new FindTheHighestAltitude();
+        FindTheHighestAltitude findTheHighestAltitude = new FindTheHighestAltitude();
         
         // Example 1
-        System.out.println(FindTheHighestAltitude.largestAltitude(new int[]{-5, 1, 5, 0, -7})); // Expected: 1
+        System.out.println(findTheHighestAltitude.largestAltitude(new int[]{-5, 1, 5, 0, -7})); // Expected: 1
         
         // Example 2
-        System.out.println(FindTheHighestAltitude.largestAltitude(new int[]{4, -3, 2, -1, -2})); // Expected: 4
+        System.out.println(findTheHighestAltitude.largestAltitude(new int[]{4, -3, 2, -1, -2})); // Expected: 4
         
         // Example 3
-        System.out.println(FindTheHighestAltitude.largestAltitude(new int[]{2, 2, -3, -1, 2, 1, -5})); // Expected: 4
+        System.out.println(findTheHighestAltitude.largestAltitude(new int[]{2, 2, -3, -1, 2, 1, -5})); // Expected: 4
     }
 }
