@@ -15,6 +15,7 @@ class SimplifyPath {
         }
 
         StringBuilder sb = new StringBuilder();
+        // this is not LIFO!
         for (String s : stack) {
             sb.append("/");
             sb.append(s);
