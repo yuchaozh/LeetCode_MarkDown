@@ -58,18 +58,46 @@
 
 // @lc code=start
 class Solution {
+    // public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
+    //     StringBuilder sb1 = new StringBuilder();
+    //     for (String s : word1) {
+    //         sb1.append(s);
+    //     }
+
+    //     StringBuilder sb2 = new StringBuilder();
+    //     for (String s : word2) {
+    //         sb2.append(s);
+    //     }
+
+    //     return sb1.compareTo(sb2) == 0;
+    // }
+
     public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
-        StringBuilder sb1 = new StringBuilder();
-        for (String s : word1) {
-            sb1.append(s);
+        // Pointers to mark the current word in the given two lists
+        int word1Pointer = 0, word2Pointer = 0;
+        // Pointers to mark the char in the string pointed by the above pointers.
+        int string1Pointer = 0, string2Pointer = 0;
+
+        while (word1Pointer < word1.length && word2Pointer < word2.length) {
+            if (word1[word1Pointer].charAt(string1Pointer) != word2[word2Pointer].charAt(string2Pointer)) {
+                return false;
+            }
+
+            string1Pointer++;
+            string2Pointer++;
+            
+            if (string1Pointer == word1[word1Pointer].length()) {
+                string1Pointer = 0;
+                word1Pointer++;
+            }
+
+            if (string2Pointer == word2[word2Pointer].length()) {
+                string2Pointer = 0;
+                word2Pointer++;
+            }
         }
 
-        StringBuilder sb2 = new StringBuilder();
-        for (String s : word2) {
-            sb2.append(s);
-        }
-
-        return sb1.compareTo(sb2) == 0;
+        return word1Pointer == word1.length && word2Pointer == word2.length;
     }
 }
 // @lc code=end
