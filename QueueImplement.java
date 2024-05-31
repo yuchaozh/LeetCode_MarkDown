@@ -1,5 +1,3 @@
-import java.util.Queue;
-
 class QueueImplement<T> {
     private Node<T> front, rear;
     private int size;
