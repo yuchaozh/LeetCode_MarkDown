@@ -18,12 +18,14 @@ class RunningSumOf1dArray {
         return result;
     }
 
+    // this sum is the previous sum. better to rename it to previousSum
+    // for current i, result[i] = previousSum + num[i];
     public int[] runningSumV2(int[] nums) {
         int[] result = new int[nums.length];
-        int sum = 0;
+        int previousSum = 0;
         for (int i = 0; i < nums.length; i++) {
-            result[i] = sum + nums[i];
-            sum = result[i];
+            result[i] = previousSum + nums[i];
+            previousSum = result[i];
         }
         return result;
     }
@@ -39,7 +41,7 @@ class RunningSumOf1dArray {
         };
 
         for (int[] input : testInputs) {
-            int[] output = solution.runningSum(input);
+            int[] output = solution.runningSumV2(input);
             
             // Print the output array
             for (int val : output) {
