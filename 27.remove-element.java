@@ -163,6 +163,8 @@ class Solution {
             }
         }
 
+        // or return ++right;
+        // return right++; is wrong, we output right first then it incremental later
         return right + 1;
     }
 }
