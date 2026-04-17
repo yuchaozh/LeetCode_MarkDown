@@ -45,6 +45,25 @@ class LeftRightSumDiff {
         return differenceArray;
     }
 
+    public int[] findDifferenceArrayV3(int[] nums) {
+        int n = nums.length;
+        int[] differenceArray = new int[n];
+        
+        int total = 0;
+        for (int i = 0; i < n; i++) {
+            total += nums[i];
+        }
+
+        int leftSum = 0, rightSum = total;
+        for (int i = 0; i < n; i++) {
+            leftSum = total - rightSum;
+            rightSum = rightSum - nums[i];
+            differenceArray[i] = Math.abs(leftSum - rightSum);
+        }
+
+        return differenceArray;
+    }
+
     public static void main(String[] args) {
         LeftRightSumDiff solution = new LeftRightSumDiff();
         int[] example1 = { 2, 5, 1, 6 };
