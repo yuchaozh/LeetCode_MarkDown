@@ -4,6 +4,8 @@ class FindTheHighestAltitude {
         int maxAltitude = 0; // To store the maximum altitude encountered
 
         // Iterate through the gain array, updating the current and max altitudes
+        // this is also read in order, if you just need to read the value, and no
+        // need to use the index or change the value. this is cleaner
         for(int i : gain) {
             currentAltitude += i;
             maxAltitude = Math.max(currentAltitude, maxAltitude);
