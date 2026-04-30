@@ -101,7 +101,7 @@ class Solution {
     }
 }
 
-class Solution {
+class Solution1 {
     public int removeElement(int[] nums, int val) {
         if (nums == null || nums.length < 1) {
             return 0;
@@ -122,7 +122,7 @@ class Solution {
     }
 }
 
-class Solution {
+class Solution2 {
     public int removeElement(int[] nums, int val) {
         if (nums == null || nums.length < 1) {
             return 0;
@@ -139,6 +139,8 @@ class Solution {
             }
         }
 
+        // also you can just return left
+        // return left;
         return right + 1;
     }
 }
