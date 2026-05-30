@@ -39,21 +39,21 @@ import java.util.List;
 /** 
  * Basically pre holds the previous array, so if the index is neither first or last, the index value is going to be pre.get(j-1) + pre.get(j)
  */
-// class Solution {
-//     // iterative
-//     public List<List<Integer>> generate(int numRows) {
-//         List<List<Integer>> result = new ArrayList<List<Integer>>();
-//         ArrayList<Integer> row = new ArrayList<>();
-//         for (int i = 0; i < numRows; i++) {
-//             row.add(0, 1);
-//             for (int j = 1; j < row.size() - 1; j++) {
-//                 row.set(j, row.get(j) + row.get(j + 1));
-//             }
-//             result.add(new ArrayList<Integer>(row));
-//         }
-//         return result;
-//     }
-// }
+class Solution {
+    // iterative
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        ArrayList<Integer> row = new ArrayList<>();
+        for (int i = 0; i < numRows; i++) {
+            row.add(0, 1);
+            for (int j = 1; j < row.size() - 1; j++) {
+                row.set(j, row.get(j) + row.get(j + 1));
+            }
+            result.add(new ArrayList<Integer>(row));
+        }
+        return result;
+    }
+}
 
 // http://www.javawithus.com/programs/pascal-triangle
 class Solution {
@@ -80,4 +80,5 @@ class Solution {
         return pascal(i - 1, j - 1) + pascal(i - 1, j);
     }
 }
+
 
